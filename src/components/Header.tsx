@@ -24,15 +24,9 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <span className="text-2xl font-dancing font-bold text-thrifty-orange">Thrifty</span>
-          <span className="text-xl font-dancing text-thrifty-blue">Glow</span>
+          <span className="text-2xl font-dancing font-bold text-thrifty-orange">Ge</span>
+          <span className="text-xl font-dancing text-thrifty-blue">Fe</span>
         </div>
-        
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-white/80 hover:text-white transition-colors">Features</a>
-          <a href="#how-it-works" className="text-white/80 hover:text-white transition-colors">How It Works</a>
-          <a href="#faq" className="text-white/80 hover:text-white transition-colors">FAQ</a>
-        </nav>
         
         <a href="#join-waitlist">
           <Button 

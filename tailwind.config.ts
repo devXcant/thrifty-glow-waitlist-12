@@ -110,6 +110,10 @@ export default {
 				'pulse-glow': {
 					'0%, 100%': { boxShadow: '0 0 0 0 rgba(49, 130, 206, 0)' },
 					'50%': { boxShadow: '0 0 20px 5px rgba(49, 130, 206, 0.4)' }
+				},
+				'bounce-soft': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
@@ -119,11 +123,15 @@ export default {
 				'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
 				'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
 				'float': 'float 5s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 2s infinite'
+				'pulse-glow': 'pulse-glow 2s infinite',
+				'bounce-soft': 'bounce-soft 3s ease-in-out infinite'
 			},
 			fontFamily: {
 				'dancing': ['"Dancing Script"', 'cursive'],
 				'montserrat': ['Montserrat', 'sans-serif']
+			},
+			backdropBlur: {
+				xs: '2px',
 			}
 		}
 	},

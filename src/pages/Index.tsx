@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import WaitlistForm from "@/components/WaitlistForm";
 import LaptopShowcase from "@/components/LaptopShowcase";
 import FeatureSection from "@/components/FeatureSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
@@ -44,9 +46,44 @@ const Index = () => {
     };
   }, []);
 
+  // Create floating bubbles
+  const renderBubbles = () => {
+    const bubbles = [];
+    for (let i = 0; i < 15; i++) {
+      const size = Math.random() * 100 + 50;
+      const left = Math.random() * 100;
+      const animDuration = Math.random() * 30 + 15;
+      const animDelay = Math.random() * 15;
+      const opacity = Math.random() * 0.07 + 0.02;
+      
+      bubbles.push(
+        <div 
+          key={i}
+          className="absolute rounded-full blur-3xl"
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${left}%`,
+            top: `-${size / 2}px`,
+            background: i % 2 === 0 ? 'rgba(30, 174, 219, 0.15)' : 'rgba(249, 115, 22, 0.15)',
+            animation: `float ${animDuration}s ease-in-out infinite`,
+            animationDelay: `${animDelay}s`,
+            opacity
+          }}
+        />
+      );
+    }
+    return bubbles;
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-hidden">
       <Header />
+      
+      {/* Floating animated bubbles */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {renderBubbles()}
+      </div>
       
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 overflow-hidden">
@@ -68,26 +105,26 @@ const Index = () => {
           {/* Stats */}
           <div 
             ref={countRef}
-            className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto mt-20 opacity-0 animate-fade-in"
+            className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-20 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.9s' }}
           >
-            <div className="text-center">
+            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
               <div className="text-3xl md:text-4xl font-bold text-thrifty-orange mb-2">
                 <span data-count="1000">0</span>+
               </div>
-              <p className="text-white/70 text-sm">People on waitlist</p>
+              <p className="text-white/70 text-sm font-medium">People on waitlist</p>
             </div>
-            <div className="text-center">
+            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
               <div className="text-3xl md:text-4xl font-bold text-thrifty-blue mb-2">
                 <span data-count="5000">0</span>+
               </div>
-              <p className="text-white/70 text-sm">Curated items</p>
+              <p className="text-white/70 text-sm font-medium">Curated items</p>
             </div>
-            <div className="text-center col-span-2 md:col-span-1">
+            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 <span data-count="95">0</span>%
               </div>
-              <p className="text-white/70 text-sm">Sustainable fashion</p>
+              <p className="text-white/70 text-sm font-medium">Sustainable fashion</p>
             </div>
           </div>
         </div>
@@ -112,58 +149,11 @@ const Index = () => {
       {/* Features Section */}
       <FeatureSection />
       
-      {/* How It Works */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900" id="how-it-works">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-dancing text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <span className="text-white">How </span>
-            <span className="text-thrifty-blue">Thrifty</span>
-            <span className="text-thrifty-orange">Glow</span>
-            <span className="text-white"> Works</span>
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 h-full hover-scale">
-                <div className="w-12 h-12 rounded-full bg-thrifty-orange/20 flex items-center justify-center mb-6 text-thrifty-orange font-bold text-xl">
-                  1
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Browse & Discover</h3>
-                <p className="text-white/70">
-                  Explore our curated collection of vintage and pre-loved fashion items from around the world.
-                </p>
-              </div>
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-[50px] rounded-full bg-thrifty-orange/10"></div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 h-full hover-scale">
-                <div className="w-12 h-12 rounded-full bg-thrifty-blue/20 flex items-center justify-center mb-6 text-thrifty-blue font-bold text-xl">
-                  2
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Purchase Securely</h3>
-                <p className="text-white/70">
-                  Buy your favorite items with our secure payment system and buyer protection guarantee.
-                </p>
-              </div>
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-[50px] rounded-full bg-thrifty-blue/10"></div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 h-full hover-scale">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-6 text-white font-bold text-xl">
-                  3
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Receive & Enjoy</h3>
-                <p className="text-white/70">
-                  Get your authenticated items delivered to your door and join our sustainable fashion community.
-                </p>
-              </div>
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-[50px] rounded-full bg-white/5"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* How It Works Section */}
+      <HowItWorksSection />
+      
+      {/* FAQ Section */}
+      <FAQSection />
       
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
@@ -175,7 +165,7 @@ const Index = () => {
               <span className="text-white"> Your Wardrobe?</span>
             </h2>
             <p className="text-xl text-white/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              Join our waitlist today and be the first to experience ThriftyGlow when we launch.
+              Join our waitlist today and be the first to experience GeFe when we launch.
               Early subscribers get exclusive perks and discounts!
             </p>
             
@@ -194,52 +184,6 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-20 left-10 w-72 h-72 bg-thrifty-blue/10 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-10 right-10 w-80 h-80 bg-thrifty-orange/10 rounded-full blur-[100px]"></div>
-        </div>
-      </section>
-      
-      {/* FAQ Section */}
-      <section className="py-24 bg-black" id="faq">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-dancing text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <span className="text-white">Frequently </span>
-            <span className="text-thrifty-orange">Asked </span>
-            <span className="text-thrifty-blue">Questions</span>
-          </h2>
-          
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              {[
-                {
-                  question: "When will ThriftyGlow launch?",
-                  answer: "We're planning to launch in Q3 2025. Join our waitlist to be notified as soon as we go live!"
-                },
-                {
-                  question: "How does the authentication process work?",
-                  answer: "All items on ThriftyGlow go through a rigorous authentication process by our team of experts to ensure quality and authenticity."
-                },
-                {
-                  question: "Can I sell my own thrifted items on ThriftyGlow?",
-                  answer: "Yes! ThriftyGlow will be a marketplace where you can both buy and sell pre-loved fashion items."
-                },
-                {
-                  question: "Do you ship internationally?",
-                  answer: "Yes, we plan to offer international shipping to most countries upon launch."
-                },
-                {
-                  question: "What makes ThriftyGlow different from other thrift platforms?",
-                  answer: "ThriftyGlow combines expert curation, authentication, and a community-focused approach to create a premium thrifting experience."
-                }
-              ].map((faq, index) => (
-                <div 
-                  key={index}
-                  className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm transition-all hover:bg-white/10"
-                >
-                  <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                  <p className="text-white/70">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
       

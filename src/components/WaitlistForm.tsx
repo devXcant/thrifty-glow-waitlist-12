@@ -17,7 +17,7 @@ const WaitlistForm = () => {
     setTimeout(() => {
       toast({
         title: "You're on the list!",
-        description: "We'll notify you when Thrifty Glow launches.",
+        description: "We'll notify you when GeFe launches.",
         duration: 5000,
       });
       setEmail('');
@@ -33,23 +33,24 @@ const WaitlistForm = () => {
       id="join-waitlist"
     >
       <div className="relative flex items-center">
+        <div className="absolute -inset-1 bg-gradient-to-r from-thrifty-blue to-thrifty-orange rounded-full opacity-70 blur-sm"></div>
         <Input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
           required
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-32 h-14 rounded-full focus:ring-thrifty-orange focus:border-thrifty-orange"
+          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-32 h-14 rounded-full focus:ring-thrifty-orange focus:border-thrifty-orange relative z-10"
         />
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="absolute right-1 h-12 rounded-full bg-gradient-to-r from-thrifty-blue to-thrifty-orange hover:opacity-90 transition-all"
+          className="absolute right-1 h-12 rounded-full bg-gradient-to-r from-thrifty-blue to-thrifty-orange hover:opacity-90 transition-all z-10"
         >
           {isSubmitting ? 'Joining...' : 'Join Waitlist'}
         </Button>
       </div>
-      <p className="mt-3 text-xs text-white/60 text-center">
+      <p className="mt-3 text-xs text-white/60 text-center font-medium">
         Join 1,000+ fashion enthusiasts already on our waitlist
       </p>
     </form>
