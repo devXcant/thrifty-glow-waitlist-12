@@ -24,13 +24,13 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <span className="text-2xl font-dancing font-bold text-thrifty-orange">Ge</span>
-          <span className="text-xl font-dancing text-thrifty-blue">Fe</span>
+          <span className="text-2xl font-dancing font-bold text-white">Ge</span>
+          <span className="text-xl font-dancing text-white/80">Fe</span>
         </div>
         
         <a href="#join-waitlist">
           <Button 
-            className="bg-thrifty-orange hover:bg-thrifty-orange/90 text-white hover-scale"
+            className="bg-white hover:bg-white/90 text-black hover-scale"
           >
             Join Waitlist
           </Button>

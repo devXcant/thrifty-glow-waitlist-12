@@ -38,9 +38,9 @@ const LaptopShowcase = () => {
             {/* Mock navigation */}
             <div className="h-16 border-b border-white/10 flex items-center px-6">
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="w-3 h-3 rounded-full bg-white/70"></div>
+                <div className="w-3 h-3 rounded-full bg-white/50"></div>
+                <div className="w-3 h-3 rounded-full bg-white/30"></div>
               </div>
               <div className="bg-white/10 h-8 w-96 mx-auto rounded-full flex items-center justify-center text-xs text-white/60">
                 gefe.com
@@ -51,8 +51,8 @@ const LaptopShowcase = () => {
             <div className="px-6 py-8 grid grid-cols-3 gap-4">
               <div className="col-span-3 mb-6">
                 <h2 className="font-dancing text-5xl text-white text-center mb-2">
-                  <span className="text-thrifty-orange">Ge</span>
-                  <span className="text-thrifty-blue">Fe</span>
+                  <span className="text-white">Ge</span>
+                  <span className="text-white/80">Fe</span>
                 </h2>
                 <p className="text-center text-white/70 text-sm">Sustainable fashion at your fingertips</p>
               </div>
@@ -71,7 +71,7 @@ const LaptopShowcase = () => {
                   </div>
                   <h3 className="text-white font-medium text-sm">Vintage Item #{item}</h3>
                   <div className="flex justify-between items-center mt-2">
-                    <span className="text-thrifty-orange font-semibold">${(Math.random() * 100).toFixed(2)}</span>
+                    <span className="text-white font-semibold">${(Math.random() * 100).toFixed(2)}</span>
                     <span className="text-xs text-white/50">4.{Math.floor(Math.random() * 10)} ★</span>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const LaptopShowcase = () => {
       <div className="laptop-bottom h-1 bg-gray-900 rounded-b-xl mx-auto w-[90%]"></div>
       
       {/* Enhanced glow effect */}
-      <div className="absolute -z-10 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-thrifty-blue/20 blur-[100px] rounded-full animate-pulse-slow"></div>
+      <div className="absolute -z-10 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/10 blur-[100px] rounded-full animate-pulse-slow"></div>
     </div>
   );
 };

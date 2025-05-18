@@ -16,24 +16,24 @@
     --popover: 0 0% 3%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 24 95% 53%; /* Orange */
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%; /* White */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 199 79% 49%; /* Blue */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 80%; /* Light gray */
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 199 79% 49%; /* Blue accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 80%; /* Light gray accent */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 0% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 24 95% 53%; /* Orange */
+    --ring: 0 0% 100%; /* White */
 
     --radius: 0.5rem;
   }
@@ -60,8 +60,8 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
   
-  .text-gradient-blue-orange {
-    @apply bg-gradient-to-r from-thrifty-blue to-thrifty-orange bg-clip-text text-transparent;
+  .text-gradient {
+    @apply bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent;
   }
   
   .hover-scale {
@@ -143,4 +143,34 @@
 
 .animate-flow {
   animation: flow var(--flow-duration, 30s) linear infinite;
+}
+
+/* Additional monochrome animations */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.animate-ripple {
+  animation: ripple 3s infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
 }

@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center space-x-2 mb-4">
-            <span className="text-3xl font-dancing font-bold text-thrifty-orange">Ge</span>
-            <span className="text-2xl font-dancing text-thrifty-blue">Fe</span>
+            <span className="text-3xl font-dancing font-bold text-white">Ge</span>
+            <span className="text-2xl font-dancing text-white/80">Fe</span>
           </div>
           <p className="text-white/60 text-md max-w-md mx-auto mb-8">
             Redefining thrift shopping with curated vintage collections for the modern fashion enthusiast.

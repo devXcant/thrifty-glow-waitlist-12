@@ -33,19 +33,19 @@ const WaitlistForm = () => {
       id="join-waitlist"
     >
       <div className="relative flex items-center">
-        <div className="absolute -inset-1 bg-gradient-to-r from-thrifty-blue to-thrifty-orange rounded-full opacity-70 blur-sm"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-white/30 to-white/70 rounded-full opacity-70 blur-sm"></div>
         <Input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
           required
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-32 h-14 rounded-full focus:ring-thrifty-orange focus:border-thrifty-orange relative z-10"
+          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-32 h-14 rounded-full focus:ring-white focus:border-white relative z-10"
         />
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="absolute right-1 h-12 rounded-full bg-gradient-to-r from-thrifty-blue to-thrifty-orange hover:opacity-90 transition-all z-10"
+          className="absolute right-1 h-12 rounded-full bg-white hover:bg-white/90 text-black hover-scale transition-all z-10"
         >
           {isSubmitting ? 'Joining...' : 'Join Waitlist'}
         </Button>

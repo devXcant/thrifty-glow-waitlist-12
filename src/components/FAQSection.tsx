@@ -21,7 +21,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, delay }: FAQItemProps) =>
     >
       <button 
         onClick={onToggle}
-        className="w-full flex justify-between items-center text-left p-5 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all"
+        className="w-full flex justify-between items-center text-left p-5 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all glass-effect"
       >
         <h3 className="text-xl font-medium text-white">{question}</h3>
         <ChevronDown 
@@ -83,11 +83,11 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="text-white">Frequently </span>
-          <span className="text-thrifty-orange">Asked </span>
-          <span className="text-thrifty-blue">Questions</span>
+          <span className="text-white">Asked </span>
+          <span className="text-white">Questions</span>
         </motion.h2>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto glass-card p-6">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}
@@ -102,8 +102,12 @@ const FAQSection = () => {
       </div>
       
       {/* Background elements */}
-      <div className="absolute top-20 right-20 w-60 h-60 bg-thrifty-blue/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-thrifty-orange/10 rounded-full blur-3xl animate-float-delay"></div>
+      <div className="absolute top-20 right-20 w-60 h-60 bg-white/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float-delay"></div>
+      
+      {/* Additional animated elements */}
+      <div className="absolute w-40 h-40 border border-white/5 rounded-full right-1/3 top-40 animate-spin-slow opacity-20"></div>
+      <div className="absolute w-24 h-24 border-2 border-white/5 rounded-full left-1/3 bottom-20 animate-spin-slow opacity-30" style={{ animationDuration: '20s' }}></div>
     </section>
   );
 };

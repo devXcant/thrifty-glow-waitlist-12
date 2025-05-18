@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				thrifty: {
-					orange: "#F97316",
-					blue: "#1EAEDB",
-					lightblue: "#33C3F0"
+					orange: "#FFFFFF",
+					blue: "#FFFFFF",
+					lightblue: "#FFFFFF"
 				}
 			},
 			borderRadius: {
@@ -108,8 +108,8 @@ export default {
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 0 0 rgba(49, 130, 206, 0)' },
-					'50%': { boxShadow: '0 0 20px 5px rgba(49, 130, 206, 0.4)' }
+					'0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 255, 255, 0)' },
+					'50%': { boxShadow: '0 0 20px 5px rgba(255, 255, 255, 0.4)' }
 				},
 				'bounce-soft': {
 					'0%, 100%': { transform: 'translateY(0)' },
