@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import WaitlistForm from "@/components/WaitlistForm";
@@ -6,6 +5,7 @@ import LaptopShowcase from "@/components/LaptopShowcase";
 import FeatureSection from "@/components/FeatureSection";
 import AppScreenshots from "@/components/AppScreenshots";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button"; // Add this import
 
 const Index = () => {
   const countRef = useRef<HTMLDivElement>(null);
