@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,14 +26,6 @@ const Header = () => {
           <span className="text-2xl font-dancing font-bold text-white">Ge</span>
           <span className="text-xl font-dancing text-white/80">Fe</span>
         </div>
-        
-        <a href="#join-waitlist">
-          <Button 
-            className="bg-white hover:bg-white/90 text-black hover-scale"
-          >
-            Join Waitlist
-          </Button>
-        </a>
       </div>
     </header>
   );

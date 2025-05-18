@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { ShieldCheck, Gavel, CreditCard } from 'lucide-react';
 
 interface FeatureProps {
   title: string;
@@ -62,21 +63,21 @@ const FeatureSection = () => {
         
         <div className="grid md:grid-cols-3 gap-10">
           <Feature 
-            title="Curated Collections"
-            description="Discover hand-selected vintage and thrifted items curated by our fashion experts."
-            icon={<span className="text-2xl">👚</span>}
+            title="VERIFIED SELLERS"
+            description="All sellers go through our verification process to ensure a safe, trustworthy marketplace experience."
+            icon={<ShieldCheck className="w-8 h-8" />}
             delay="0.1s"
           />
           <Feature 
-            title="Sustainable Fashion"
-            description="Join our eco-friendly community and reduce fashion waste with pre-loved clothing."
-            icon={<span className="text-2xl">🌿</span>}
+            title="COMPETITIVE BIDDING"
+            description="Find unique pieces at prices you set through our auction system."
+            icon={<Gavel className="w-8 h-8" />}
             delay="0.3s"
           />
           <Feature 
-            title="Global Marketplace"
-            description="Shop vintage treasures from around the world with affordable shipping options."
-            icon={<span className="text-2xl">🌎</span>}
+            title="SECURE PAYMENTS"
+            description="Secure payment gateway with multiple options for safe and convenient transactions."
+            icon={<CreditCard className="w-8 h-8" />}
             delay="0.5s"
           />
         </div>

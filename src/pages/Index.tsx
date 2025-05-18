@@ -4,10 +4,8 @@ import Header from "@/components/Header";
 import WaitlistForm from "@/components/WaitlistForm";
 import LaptopShowcase from "@/components/LaptopShowcase";
 import FeatureSection from "@/components/FeatureSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import FAQSection from "@/components/FAQSection";
+import AppScreenshots from "@/components/AppScreenshots";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const countRef = useRef<HTMLDivElement>(null);
@@ -65,7 +63,7 @@ const Index = () => {
             height: `${size}px`,
             left: `${left}%`,
             top: `-${size / 2}px`,
-            background: i % 2 === 0 ? 'rgba(30, 174, 219, 0.15)' : 'rgba(249, 115, 22, 0.15)',
+            background: 'rgba(255, 255, 255, 0.05)',
             animation: `float ${animDuration}s ease-in-out infinite`,
             animationDelay: `${animDelay}s`,
             opacity
@@ -74,6 +72,19 @@ const Index = () => {
       );
     }
     return bubbles;
+  };
+
+  const renderAIInsights = () => {
+    return (
+      <div className="w-full max-w-4xl mx-auto glass-effect p-8 rounded-2xl mb-20 relative overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-30"></div>
+        <img 
+          src="/lovable-uploads/f6871340-177d-4eda-8e50-7397556f58a3.png" 
+          alt="AI-Generated Insights" 
+          className="w-full h-auto rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+    );
   };
 
   return (
@@ -91,7 +102,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h1 className="opacity-0 animate-fade-in text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-white">Discover Unique </span>
-              <span className="font-dancing text-thrifty-orange">Vintage</span>
+              <span className="font-dancing text-white">Vintage</span>
               <span className="text-white"> Fashion</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -109,13 +120,13 @@ const Index = () => {
             style={{ animationDelay: '0.9s' }}
           >
             <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
-              <div className="text-3xl md:text-4xl font-bold text-thrifty-orange mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 <span data-count="1000">0</span>+
               </div>
               <p className="text-white/70 text-sm font-medium">People on waitlist</p>
             </div>
             <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
-              <div className="text-3xl md:text-4xl font-bold text-thrifty-blue mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 <span data-count="5000">0</span>+
               </div>
               <p className="text-white/70 text-sm font-medium">Curated items</p>
@@ -130,15 +141,15 @@ const Index = () => {
         </div>
         
         {/* Background elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-thrifty-orange/20 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-thrifty-blue/20 rounded-full blur-[100px]"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-white/10 rounded-full blur-[100px]"></div>
       </section>
       
       {/* Laptop Showcase */}
       <section className="py-20 relative">
         <div className="container">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="font-dancing text-gradient-blue-orange">Experience</span>
+            <span className="font-dancing text-white">Experience</span>
             <span className="text-white"> the Future of Thrift Shopping</span>
           </h2>
           
@@ -149,11 +160,20 @@ const Index = () => {
       {/* Features Section */}
       <FeatureSection />
       
-      {/* How It Works Section */}
-      <HowItWorksSection />
+      {/* AI Insights Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <span className="text-white">AI-Powered </span>
+            <span className="font-dancing text-white">Insights</span>
+          </h2>
+          
+          {renderAIInsights()}
+        </div>
+      </section>
       
-      {/* FAQ Section */}
-      <FAQSection />
+      {/* Screenshot Showcase */}
+      <AppScreenshots />
       
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
@@ -161,7 +181,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <span className="text-white">Ready to </span>
-              <span className="font-dancing text-thrifty-orange">Revolutionize</span>
+              <span className="font-dancing text-white">Revolutionize</span>
               <span className="text-white"> Your Wardrobe?</span>
             </h2>
             <p className="text-xl text-white/80 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -171,7 +191,7 @@ const Index = () => {
             
             <a href="#join-waitlist">
               <Button 
-                className="bg-gradient-to-r from-thrifty-blue to-thrifty-orange hover:opacity-90 text-white px-8 py-6 rounded-full text-lg animate-pulse-glow opacity-0 animate-fade-in hover-scale"
+                className="bg-white hover:bg-white/90 text-black px-8 py-6 rounded-full text-lg animate-pulse-glow opacity-0 animate-fade-in hover-scale"
                 style={{ animationDelay: '0.5s' }}
               >
                 Join The Waitlist Now
@@ -182,8 +202,8 @@ const Index = () => {
         
         {/* Background elements */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-thrifty-blue/10 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-thrifty-orange/10 rounded-full blur-[100px]"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white/10 rounded-full blur-[100px]"></div>
         </div>
       </section>
       
