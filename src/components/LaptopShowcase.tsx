@@ -26,6 +26,16 @@ const LaptopShowcase = () => {
     };
   }, []);
 
+  // Array of image paths for the screenshots
+  const screenshotImages = [
+    '/lovable-uploads/974f5818-9bbd-4de2-a863-4ff181eef936.png',
+    '/lovable-uploads/bf534fe0-5815-4ceb-8080-f935b0fc75f9.png',
+    '/lovable-uploads/77e82627-1367-4755-baae-14fafeccfea5.png',
+    '/lovable-uploads/cf5c236b-70b7-4241-995d-82dc5656768e.png',
+    '/lovable-uploads/f6871340-177d-4eda-8e50-7397556f58a3.png',
+    '/lovable-uploads/f6871340-177d-4eda-8e50-7397556f58a3.png',
+  ];
+
   return (
     <div 
       ref={laptopRef}
@@ -57,21 +67,23 @@ const LaptopShowcase = () => {
                 <p className="text-center text-white/70 text-sm">Sustainable fashion at your fingertips</p>
               </div>
               
-              {/* Mock products with animation */}
-              {[1, 2, 3, 4, 5, 6].map((item) => (
+              {/* Actual screenshots with animation */}
+              {screenshotImages.map((imagePath, index) => (
                 <div 
-                  key={item}
+                  key={index}
                   className="bg-white/5 h-64 rounded-lg p-4 flex flex-col hover:bg-white/10 transition-all cursor-pointer transform hover:scale-105 hover:shadow-lg border border-white/10 hover:border-white/20"
-                  style={{ animationDelay: `${item * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="h-36 bg-gradient-to-br from-gray-700 to-gray-800 rounded-md mb-4 flex items-center justify-center overflow-hidden group">
-                    <div className="transform group-hover:scale-110 transition-transform duration-700 w-full h-full flex items-center justify-center">
-                      <span className="text-white/30 text-xs">Product Image</span>
-                    </div>
+                  <div className="h-36 bg-gray-800 rounded-md mb-4 flex items-center justify-center overflow-hidden group">
+                    <img 
+                      src={imagePath} 
+                      alt={`GeFe Screenshot ${index + 1}`}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
-                  <h3 className="text-white font-medium text-sm">Vintage Item #{item}</h3>
+                  <h3 className="text-white font-medium text-sm">Product Feature #{index + 1}</h3>
                   <div className="flex justify-between items-center mt-2">
-                    <span className="text-white font-semibold">${(Math.random() * 100).toFixed(2)}</span>
+                    <span className="text-white font-semibold">Explore Now</span>
                     <span className="text-xs text-white/50">4.{Math.floor(Math.random() * 10)} ★</span>
                   </div>
                 </div>

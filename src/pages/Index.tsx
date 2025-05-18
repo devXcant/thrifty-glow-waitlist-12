@@ -112,32 +112,6 @@ const Index = () => {
             
             <WaitlistForm />
           </div>
-          
-          {/* Stats */}
-          <div 
-            ref={countRef}
-            className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-20 opacity-0 animate-fade-in"
-            style={{ animationDelay: '0.9s' }}
-          >
-            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                <span data-count="1000">0</span>+
-              </div>
-              <p className="text-white/70 text-sm font-medium">People on waitlist</p>
-            </div>
-            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                <span data-count="5000">0</span>+
-              </div>
-              <p className="text-white/70 text-sm font-medium">Curated items</p>
-            </div>
-            <div className="text-center backdrop-blur-md bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 duration-300">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                <span data-count="95">0</span>%
-              </div>
-              <p className="text-white/70 text-sm font-medium">Sustainable fashion</p>
-            </div>
-          </div>
         </div>
         
         {/* Background elements */}
